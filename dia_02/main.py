@@ -7,8 +7,19 @@
 # NO hace falta comprobar que ambas palabras existan.
 # Dos palabras exactamente iguales no son anagrama.
 
-x = [1, 2]
-y = [2, 1]
-x is y  
-if x == y:
-    print('Verdad')
+palabra1 = input('Primera palabra: ')
+palabra2 = input('Segunda palabra: ')
+
+def anagrama(palabra1, palabra2):
+    if len(palabra1) != len(palabra2):  #len funciona para ver la longitud de un elemento
+        return False
+    elif palabra1 == palabra2:
+        return False
+    elif sorted(palabra1) == sorted(palabra2):  #sorted se utiliza para ordenar elementos 
+        return True
+    else:
+        return False  
+
+resultado = anagrama(palabra1, palabra2)
+print(f"¿Son anagramas? {resultado}")
+
